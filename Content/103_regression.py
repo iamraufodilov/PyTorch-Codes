@@ -38,3 +38,6 @@ loss_func = torch.nn.MSELoss() # this is for regression mean squared loss
 for t in range(200):
     prediction = net(x)
     loss = loss_func(prediction, y)
+    optimizer.zero_grad()
+    loss.backward()
+    optimizer.step()
